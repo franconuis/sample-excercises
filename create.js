@@ -18,10 +18,9 @@ csv().fromFile(`${__dirname}/sample-excersize.csv`)
 
     let customerObject = {
       id: slugid.nice(), //generate a valid ID for this customer profile
-      name: row.name.trim(),
-      emails: [],
-      phones: [],
-      customAttributes: {}
+      email: [],
+      title: [],
+      body: {}
     };
 
     //for(let columnName in row) {

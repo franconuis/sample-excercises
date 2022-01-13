@@ -1,20 +1,7 @@
-# sample-excercises
-ingest the 10 rows of data from csv
+This script inserts customer profiles in Gladly utilizing a CSV file in create/sample-excersize.csv.
 
-•	When ingesting you should use API: https://developer.gladly.com/rest/#operation/createItem
+The script transforms each row in the CSV file to a customer profile object, then uses the Gladly Create Customer API to create the profile on Gladly.
 
-o	"id" can be left blank (OK to have Gladly auto-generate)
+When a profile is successfully created, the script will log the success using console.log
 
-o	Set customer.emailAddress to the email address in the CSV row
-
-o	Set content.type to CUSTOMER_ACTIVITY
-
-o	Set content.title to the title in the CSV row
-
-o	Set content.body to the body in the CSV row
-
-o	Set activityType to EMAIL
-
-o	Set sourceName to your first name (e.g.: Eliza)
-
-o	Do not supply the ocurredAt timestamp or the link object
+When a profile fails to be created, the script will log the error using console.log, along with the HTTP status code received.

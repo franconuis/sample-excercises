@@ -7,7 +7,7 @@ const { createCustomer } = require('../util/api');
 //Keep note of rate limits: https://developer.gladly.com/rest/#section/Default-Rate-Limit
 const queue = require('queue');
 let q = new queue({
-  concurrency: 5
+  concurrency: 2
 });
 
 //Load CSV file
@@ -22,24 +22,6 @@ csv().fromFile(`${__dirname}/sample-excersize.csv`)
       title: [],
       body: {}
     };
-
-    //for(let columnName in row) {
-     // if(/^email:\d+/.exec(columnName) && row[columnName].trim()) {
-    //    customerObject.emails.push({
-    //      original: row[columnName]
-    //    });
-    //  } else if (/^phone:\d+/.exec(columnName) && row[columnName].trim()) {
-    //    customerObject.phones.push({
-    //      original: row[columnName]
-    //    });
-    //  } else {
-    //    let isCustomAttributeMatch = /^customAttribute:(.*)/.exec(columnName);
-
-    ///    if(isCustomAttributeMatch && isCustomAttributeMatch.length && isCustomAttributeMatch[1].trim() && row[columnName].trim()) {
-    //      customerObject.customAttributes[isCustomAttributeMatch[1]] = row[columnName].trim();
-    //    }
-    //  }
-    //}
 
     q.push((cb) => {
       createCustomer(customerObject)

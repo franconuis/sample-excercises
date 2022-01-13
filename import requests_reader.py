@@ -1,8 +1,8 @@
 import pandas as pd
 import pyodbc
 
-api_host = 'mstr'
-api_key = 'XXXXXXXXXXXXXXXXXXX'
+api_name = 'franco.adrian@outlook.com'
+api_key = 'kBI9aaX46TziclFAsbdzeMEeJ6vf4wMg'
 
 data = pd.read_csv (r'C:\Temp\sample-exercise.csv')   
 df = pd.DataFrame(data)
